@@ -50,13 +50,7 @@ jobs:
        mv -vi MiSTer "releases/${FILENAME}"
        echo "filename=$FILENAME" >>"$GITHUB_OUTPUT"
       id: build
-    - name: "Upload ${{ steps.build.outputs.filename }} Artifact"
-      uses: actions/upload-artifact@v4
-      with:
-        name: "${{ steps.build.outputs.filename }}"
-        path: "releases/${{ steps.build.outputs.filename }}"
-        if-no-files-found: error
-        retention-days: 7
+    
     - name: Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
