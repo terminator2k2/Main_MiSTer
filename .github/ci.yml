@@ -57,3 +57,10 @@ jobs:
         path: "releases/${{ steps.build.outputs.filename }}"
         if-no-files-found: error
         retention-days: 7
+       - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: ${{ steps.build.outputs.filename }}.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
