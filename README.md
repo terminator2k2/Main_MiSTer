@@ -6,4 +6,4 @@ For the purposes of getting google to crawl the wiki, here's a link to the (not 
 
 If you're a human looking for the wiki, that's [here](https://github.com/MiSTer-devel/Wiki_MiSTer/wiki)
 
-Added Sinden Light gun
+**** Added Sinden Light gun ****
